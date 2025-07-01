@@ -2,8 +2,16 @@
 
 body {
   background-color: rgb(238, 239, 224);
-  color: #171717;
+  color: #000 !important;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+body *, body a {
+  color: #000 !important;
+}
+
+.theme-toggle-btn {
+  color: #fff !important;
 }
 
 body.dark {

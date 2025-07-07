@@ -158,10 +158,10 @@ export default function Home() {
         {openCard === 2 && (
           <div className="mb-4 text-gray-600 dark:text-gray-300 text-base space-y-4">
             <div>
-              <div className="font-bold text-lg">Bangalore Institute of Technology</div>
+              <div className="font-bold text-lg">Bangalore Technological Institute</div>
               <div>Bachelor of Engineering in Computer Science</div>
               <div className="text-sm text-gray-500 dark:text-gray-400">2023 – Present</div>
-              <div className="mt-1">Currently pursuing a comprehensive undergraduate program focused on core areas of computer science including data structures, algorithms, software development, and machine learning. Actively participating in technical clubs and coding competitions to enhance practical knowledge and team collaboration skills.</div>
+              <div className="mt-1">Currently pursuing a comprehensive undergraduate program focused on core areas of computer science including data structures, algorithms, and software development. Actively participating in technical clubs and coding competitions to enhance practical knowledge and team collaboration skills.</div>
             </div>
             <div>
               <div className="font-bold text-lg">R.K. Mission School</div>

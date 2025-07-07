@@ -179,7 +179,7 @@ export default function Home() {
         )}
         {openCard !== 2 && (
           <ul className="space-y-2 text-gray-700 dark:text-gray-200">
-            <li className="border-l-4 border-accent pl-3 hover:bg-accent/10 rounded transition-colors font-semibold">Bangalore Institute of Technology</li>
+            <li className="border-l-4 border-accent pl-3 hover:bg-accent/10 rounded transition-colors font-semibold">Bangalore Technological Institute</li>
             <li className="border-l-4 border-accent pl-3 hover:bg-accent/10 rounded transition-colors">R.K. Mission School</li>
             <li className="border-l-4 border-accent pl-3 hover:bg-accent/10 rounded transition-colors">Holy Cross School</li>
           </ul>

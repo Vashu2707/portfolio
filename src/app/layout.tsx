@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import DarkModeToggle from "../components/DarkModeToggle";
+import SceneWrapper from "@/components/three/SceneWrapper";
+import LoadingOverlay from "@/components/LoadingOverlay";
 
 export const metadata: Metadata = {
-  title: "Vashu.in",
-  description: "Portfolio of Vashu Gupta - Full Stack Developer, Projects, Skills, Education, and Socials.",
+  title: "Vashu - PS4 Portfolio",
+  description: "PlayStation 4 inspired portfolio showcasing projects, skills, and achievements.",
 };
 
 export default function RootLayout({
@@ -13,27 +14,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" style={{ backgroundColor: '#0a0e27' }}>
       <body
-        className="antialiased min-h-screen flex flex-col"
-        style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', fontFamily: 'Arial, Helvetica, sans-serif' }}
+        className="antialiased min-h-screen flex flex-col overflow-hidden dark"
+        style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', fontFamily: 'Arial, Helvetica, sans-serif', backgroundColor: '#0a0e27' }}
       >
-        <header
-          className="w-full py-8 px-4 text-background text-center flex-shrink-0 font-extrabold tracking-wide relative z-10 flex items-center justify-between dark:bg-[#222831]"
-          style={{ background: 'rgba(167, 193, 168, 0.85)', fontWeight: 'bold', fontSize: '2.5rem', fontFamily: 'Arial, Helvetica, sans-serif', boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.15)', backdropFilter: 'blur(8px)', borderBottomLeftRadius: '1.5rem', borderBottomRightRadius: '1.5rem' }}
-        >
-          <span className="drop-shadow-lg">Vashu Gupta</span>
-          <DarkModeToggle />
-        </header>
-        <main className="flex-1 w-full flex flex-col items-center justify-center bg-background">
+        {/* Loading Overlay */}
+        <LoadingOverlay />
+
+        {/* Three.js Scene Background */}
+        <SceneWrapper />
+
+        <main className="flex-1 w-full flex flex-col items-center justify-center bg-transparent relative z-10">
           {children}
         </main>
-        <footer
-          className="w-full py-6 px-4 text-primary text-center text-base flex-shrink-0 relative z-10 dark:bg-[#222831]"
-          style={{ background: 'rgba(167, 193, 168, 0.85)', boxShadow: '0 -8px 32px 0 rgba(31, 38, 135, 0.10)', backdropFilter: 'blur(8px)', borderTopLeftRadius: '1.5rem', borderTopRightRadius: '1.5rem', fontFamily: 'Arial, Helvetica, sans-serif' }}
-        >
-          <span className="font-semibold">Contact:</span> <a href="mailto:mail@vashu.in" className="underline hover:text-accent font-bold transition-colors duration-200">mail@vashu.in</a>
-        </footer>
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { skills } from '@/data/skills';
 import { useRouter } from 'next/navigation';
 import { ChevronLeft } from 'lucide-react';
@@ -151,8 +150,6 @@ export default function SkillsView() {
             </motion.div>
           ))}
         </motion.div>
-      </div>
-    </motion.div>
       </div>
     </motion.div>
   );

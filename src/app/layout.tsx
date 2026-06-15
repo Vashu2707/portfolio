@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import SceneWrapper from "@/components/three/SceneWrapper";
 import LoadingOverlay from "@/components/LoadingOverlay";
+import RouteSync from "@/app/components/RouteSync";
 
 export const metadata: Metadata = {
   title: "Vashu - PS4 Portfolio",
@@ -19,6 +20,9 @@ export default function RootLayout({
         className="antialiased min-h-screen flex flex-col overflow-hidden dark"
         style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', fontFamily: 'Arial, Helvetica, sans-serif', backgroundColor: '#0a0e27' }}
       >
+        {/* Route Sync */}
+        <RouteSync />
+
         {/* Loading Overlay */}
         <LoadingOverlay />
 

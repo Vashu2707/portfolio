@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 import { skills } from '@/data/skills';
-import { useDashboardStore } from '@/store/dashboardStore';
+import { useRouter } from 'next/navigation';
 import { ChevronLeft } from 'lucide-react';
 
 const containerVariants = {
@@ -23,37 +23,17 @@ const itemVariants = {
 };
 
 export default function SkillsView() {
-  const setCurrentPage = useDashboardStore((state) => state.setCurrentPage);
-  const [selectedLevel, setSelectedLevel] = useState<string | null>(null);
+  const router = useRouter();
 
-  // Group skills by category
-  const groupedSkills = skills.reduce(
-    (acc, skill) => {
-      if (!acc[skill.category]) {
-        acc[skill.category] = [];
-      }
-      acc[skill.category].push(skill);
-      return acc;
-    },
-    {} as Record<string, typeof skills>
-  );
-
-  const getLevelColor = (level: string) => {
-    switch (level) {
-      case 'expert':
-        return 'from-yellow-500 to-yellow-600 shadow-lg shadow-yellow-500/50';
-      case 'advanced':
-        return 'from-yellow-600 to-yellow-700';
-      case 'intermediate':
-        return 'from-yellow-700 to-yellow-800/70';
-      default:
-        return 'from-yellow-800 to-yellow-900/50';
-    }
-  };
+  // Unified skill style
+  const skillStyle = 'from-emerald-500/20 to-cyan-500/10 border border-emerald-400/50 text-emerald-100 shadow-md shadow-emerald-500/10';
 
   const getLevelLabel = (level: string) => {
     return level.charAt(0).toUpperCase() + level.slice(1);
   };
+
+  // Get total unique categories
+  const categoriesCount = new Set(skills.map(s => s.category)).size;
 
   return (
     <motion.div
@@ -61,17 +41,28 @@ export default function SkillsView() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className="fixed inset-0 z-30 bg-gradient-to-br from-yellow-950 via-yellow-900 to-yellow-950 overflow-auto p-4"
+      style={{ willChange: 'transform, opacity' }}
+      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-auto p-4 backdrop-blur-md"
     >
       {/* Animated background gradient */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         <motion.div
           animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.5, 0.3],
+            scale: [1, 1.15, 1],
+            opacity: [0.15, 0.3, 0.15],
           }}
           transition={{ duration: 8, repeat: Infinity, delay: 0.5 }}
-          className="absolute top-1/2 right-0 w-96 h-96 bg-yellow-600 rounded-full blur-3xl"
+          style={{ willChange: 'transform, opacity' }}
+          className="absolute -top-1/4 left-1/4 w-96 h-96 bg-emerald-400/15 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.2, 0.1],
+          }}
+          transition={{ duration: 10, repeat: Infinity, delay: 2.5 }}
+          style={{ willChange: 'transform, opacity' }}
+          className="absolute -bottom-1/4 right-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
         />
       </div>
 
@@ -79,10 +70,10 @@ export default function SkillsView() {
       <motion.button
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        onClick={() => setCurrentPage('dashboard')}
+        onClick={() => router.push('/')}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed top-8 left-8 z-40 flex items-center gap-2 px-4 py-2 bg-yellow-800/80 hover:bg-yellow-700 text-white rounded-lg transition-colors backdrop-blur-sm border border-yellow-600/50"
+        className="fixed top-8 left-8 z-40 flex items-center gap-2 px-4 py-2 bg-emerald-950/40 hover:bg-emerald-900/60 text-emerald-100 rounded-lg transition-colors backdrop-blur-sm border border-emerald-500/20"
       >
         <ChevronLeft size={20} />
         Back
@@ -98,96 +89,40 @@ export default function SkillsView() {
           <h2 className="text-5xl font-bold text-white mb-2">
             Skills & Expertise
           </h2>
-          <p className="text-white text-lg">My technical expertise organized by proficiency level</p>
-        </motion.div>
-
-        {/* Level Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.15 }}
-          className="mb-8 flex flex-wrap gap-2 justify-center"
-        >
-          <motion.button
-            onClick={() => setSelectedLevel(null)}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className={`px-4 py-2 rounded-full font-medium transition-all ${
-              selectedLevel === null
-                ? 'bg-gradient-to-r from-yellow-500 to-yellow-600 text-white shadow-lg'
-                : 'bg-yellow-800/50 text-white hover:bg-yellow-800'
-            }`}
-          >
-            All Skills
-          </motion.button>
-          {['expert', 'advanced', 'intermediate', 'beginner'].map((level) => (
-            <motion.button
-              key={level}
-              onClick={() => setSelectedLevel(level)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className={`px-4 py-2 rounded-full font-medium transition-all capitalize ${
-                selectedLevel === level
-                  ? `bg-gradient-to-r ${getLevelColor(level)} text-white`
-                  : 'bg-yellow-800/50 text-white hover:bg-yellow-800'
-              }`}
-            >
-              {getLevelLabel(level)}
-            </motion.button>
-          ))}
+          <p className="text-slate-300 text-lg">A comprehensive collection of my technical capabilities</p>
         </motion.div>
 
         <motion.div
-          className="space-y-10"
+          className="flex flex-wrap justify-center gap-4"
           variants={containerVariants}
           initial="hidden"
           animate="show"
         >
-          {Object.entries(groupedSkills).map(([category, categorySkills]) => {
-            const filteredSkills = selectedLevel
-              ? categorySkills.filter((s) => s.level === selectedLevel)
-              : categorySkills;
-
-            if (filteredSkills.length === 0) return null;
-
-            return (
-              <motion.div key={category} variants={itemVariants} className="group">
-                <motion.h3
-                  initial={{ opacity: 0, x: -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="text-2xl font-bold text-white mb-5 flex items-center gap-3"
-                >
-                  <span className="inline-block w-1 h-8 bg-gradient-to-b from-yellow-400 to-yellow-600 rounded-full" />
-                  {category}
-                </motion.h3>
-                <div className="flex flex-wrap gap-3">
-                  {filteredSkills.map((skill, idx) => (
-                    <motion.div
-                      key={skill.name}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: idx * 0.05 }}
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      className={`relative group/skill`}
-                    >
-                      <div
-                        className={`px-4 py-2 rounded-full text-sm font-medium bg-gradient-to-r ${getLevelColor(skill.level)} text-white transition-all cursor-default shadow-md`}
-                      >
-                        {skill.name}
-                      </div>
-                      <motion.div
-                        initial={{ opacity: 0, y: 4 }}
-                        whileHover={{ opacity: 1, y: 0 }}
-                        className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap pointer-events-none"
-                      >
-                        {getLevelLabel(skill.level)}
-                      </motion.div>
-                    </motion.div>
-                  ))}
-                </div>
+          {skills.map((skill, idx) => (
+            <motion.div
+              key={skill.name}
+              variants={itemVariants}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: idx * 0.05 }}
+              whileHover={{ scale: 1.08, y: -2 }}
+              className="relative group/skill"
+            >
+              <div
+                className={`px-6 py-3 rounded-xl text-base font-semibold bg-gradient-to-r ${skillStyle} transition-all cursor-default flex flex-col items-center gap-1`}
+              >
+                <span className="text-white">{skill.name}</span>
+                <span className="text-[10px] uppercase tracking-wider text-emerald-400/70 font-bold">{skill.category}</span>
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 4 }}
+                whileHover={{ opacity: 1, y: 0 }}
+                className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-slate-900 text-white text-xs px-2 py-1 rounded whitespace-nowrap pointer-events-none border border-slate-800 z-50 shadow-xl"
+              >
+                Proficiency: {getLevelLabel(skill.level)}
               </motion.div>
-            );
-          })}
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* Stats Section */}
@@ -195,28 +130,29 @@ export default function SkillsView() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4"
+          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
         >
           {[
-            { label: 'Expert Skills', value: skills.filter((s) => s.level === 'expert').length },
-            { label: 'Advanced Skills', value: skills.filter((s) => s.level === 'advanced').length },
-            { label: 'Intermediate', value: skills.filter((s) => s.level === 'intermediate').length },
-            { label: 'Categories', value: Object.keys(groupedSkills).length },
+            { label: 'Total Skills', value: skills.length },
+            { label: 'Specializations', value: categoriesCount },
+            { label: 'Expert Areas', value: skills.filter(s => s.level === 'expert').length },
           ].map((stat, idx) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.5 + idx * 0.05 }}
-              className="bg-gradient-to-br from-yellow-800/50 to-yellow-900/50 rounded-lg p-4 text-center border border-yellow-600/30"
+              className="bg-[#0b1026]/75 rounded-xl p-6 text-center border border-slate-800 hover:border-emerald-500/25 transition-all duration-300 backdrop-blur-sm"
             >
-              <motion.p className="text-3xl font-bold text-white mb-1">
+              <motion.p className="text-4xl font-bold text-emerald-400 mb-1">
                 {stat.value}
               </motion.p>
-              <p className="text-white text-sm font-medium">{stat.label}</p>
+              <p className="text-slate-400 text-sm font-semibold uppercase tracking-widest">{stat.label}</p>
             </motion.div>
           ))}
         </motion.div>
+      </div>
+    </motion.div>
       </div>
     </motion.div>
   );

@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type Page = 'dashboard' | 'profile' | 'projects' | 'skills' | 'resume' | 'contact';
+export type Page = 'dashboard' | 'profile' | 'projects' | 'skills' | 'resume' | 'contact' | 'blogs';
 
 interface DashboardState {
   activeTile: number;

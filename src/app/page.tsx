@@ -1,16 +1,8 @@
 'use client';
 
-import { Suspense, lazy } from 'react';
+import { Suspense } from 'react';
 import { motion } from 'framer-motion';
-import { useDashboardStore } from '@/store/dashboardStore';
 import Navigation from '@/components/dashboard/Navigation';
-
-// Lazy load page views
-const Profile = lazy(() => import('./components/Profile'));
-const ProjectsView = lazy(() => import('./components/ProjectsView'));
-const SkillsView = lazy(() => import('./components/SkillsView'));
-const ResumeView = lazy(() => import('./components/ResumeView'));
-const ContactView = lazy(() => import('./components/ContactView'));
 
 // Loading skeleton component
 function LoadingSkeleton() {
@@ -34,16 +26,9 @@ function LoadingSkeleton() {
 }
 
 export default function Home() {
-  const currentPage = useDashboardStore((state) => state.currentPage);
-
   return (
     <Suspense fallback={<LoadingSkeleton />}>
-      {currentPage === 'dashboard' && <Navigation />}
-      {currentPage === 'profile' && <Profile />}
-      {currentPage === 'projects' && <ProjectsView />}
-      {currentPage === 'skills' && <SkillsView />}
-      {currentPage === 'resume' && <ResumeView />}
-      {currentPage === 'contact' && <ContactView />}
+      <Navigation />
     </Suspense>
   );
 }

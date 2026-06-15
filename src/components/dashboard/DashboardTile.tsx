@@ -1,26 +1,23 @@
 'use client';
 
+import { memo } from 'react';
 import { motion } from 'framer-motion';
-import { useDashboardStore } from '@/store/dashboardStore';
 
 interface DashboardTileProps {
-  id: number;
   title: string;
   icon?: React.ReactNode;
   gradient: string;
+  isActive: boolean;
   onClick: () => void;
 }
 
-export default function DashboardTile({
-  id,
+function DashboardTileComponent({
   title,
   icon,
   gradient,
+  isActive,
   onClick,
 }: DashboardTileProps) {
-  const activeTile = useDashboardStore((state) => state.activeTile);
-  const isActive = activeTile === id;
-
   return (
     <motion.div
       animate={{
@@ -33,6 +30,7 @@ export default function DashboardTile({
       className={`cursor-pointer rounded-lg p-6 min-h-[240px] flex flex-col items-center justify-center relative overflow-hidden group ${gradient}`}
       role="button"
       tabIndex={0}
+      style={{ willChange: 'transform, opacity' }}
       onKeyPress={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           onClick();
@@ -48,16 +46,20 @@ export default function DashboardTile({
         <h3 className="text-2xl font-bold text-white drop-shadow-lg">{title}</h3>
       </div>
 
-      {/* Focus indicator */}
-      {isActive && (
-        <motion.div
-          layoutId="focus-indicator"
-          className="absolute inset-0 border-2 border-white rounded-lg pointer-events-none"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-        />
-      )}
+      {/* Focus indicator - animated smoothly on GPU via opacity/scale (no layoutId to prevent layout thrashing) */}
+      <motion.div
+        initial={false}
+        animate={{
+          opacity: isActive ? 1 : 0,
+          scale: isActive ? 1 : 0.95,
+        }}
+        transition={{ duration: 0.25, ease: 'easeOut' }}
+        className="absolute inset-0 border-2 border-white rounded-lg pointer-events-none"
+        style={{ willChange: 'transform, opacity' }}
+      />
     </motion.div>
   );
 }
+
+export const DashboardTile = memo(DashboardTileComponent);
+export default DashboardTile;

@@ -64,7 +64,7 @@ export default function ProjectsView() {
         onClick={() => router.push('/')}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed top-8 left-8 z-40 flex items-center gap-2 px-4 py-2 bg-fuchsia-950/50 hover:bg-fuchsia-900/80 text-fuchsia-200 rounded-lg transition-colors backdrop-blur-sm border border-fuchsia-500/30"
+        className="fixed top-4 left-4 md:top-8 md:left-8 z-40 flex items-center gap-2 px-4 py-2 bg-fuchsia-950/50 hover:bg-fuchsia-900/80 text-fuchsia-200 rounded-lg transition-colors backdrop-blur-sm border border-fuchsia-500/30"
       >
         <ChevronLeft size={20} />
         Back

@@ -72,7 +72,7 @@ export default function SkillsView() {
         onClick={() => router.push('/')}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed top-8 left-8 z-40 flex items-center gap-2 px-4 py-2 bg-emerald-950/40 hover:bg-emerald-900/60 text-emerald-100 rounded-lg transition-colors backdrop-blur-sm border border-emerald-500/20"
+        className="fixed top-4 left-4 md:top-8 md:left-8 z-40 flex items-center gap-2 px-4 py-2 bg-emerald-950/40 hover:bg-emerald-900/60 text-emerald-100 rounded-lg transition-colors backdrop-blur-sm border border-emerald-500/20"
       >
         <ChevronLeft size={20} />
         Back
@@ -111,7 +111,9 @@ export default function SkillsView() {
                 className={`px-6 py-3 rounded-xl text-base font-semibold bg-gradient-to-r ${skillStyle} transition-all cursor-default flex flex-col items-center gap-1`}
               >
                 <span className="text-white">{skill.name}</span>
-                <span className="text-[10px] uppercase tracking-wider text-emerald-400/70 font-bold">{skill.category}</span>
+                <span className="text-[10px] uppercase tracking-wider text-emerald-400/70 font-bold">
+                  {skill.category} <span className="md:hidden text-emerald-300">• {getLevelLabel(skill.level)}</span>
+                </span>
               </div>
               <motion.div
                 initial={{ opacity: 0, y: 4 }}

@@ -27,7 +27,7 @@ function DashboardTileComponent({
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       onClick={onClick}
-      className={`cursor-pointer rounded-lg p-6 min-h-[240px] flex flex-col items-center justify-center relative overflow-hidden group ${gradient}`}
+      className={`cursor-pointer rounded-lg p-6 min-h-[240px] w-[220px] min-w-[220px] shrink-0 md:w-auto md:min-w-0 md:shrink flex flex-col items-center justify-center relative overflow-hidden group ${gradient}`}
       role="button"
       tabIndex={0}
       style={{ willChange: 'transform, opacity' }}

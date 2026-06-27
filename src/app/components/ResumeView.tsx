@@ -61,7 +61,7 @@ export default function ResumeView() {
         onClick={() => router.push('/')}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed top-8 left-8 z-40 flex items-center gap-2 px-4 py-2 bg-slate-800/50 hover:bg-slate-700/80 text-slate-100 rounded-lg transition-colors backdrop-blur-sm border border-slate-500/30"
+        className="fixed top-4 left-4 md:top-8 md:left-8 z-40 flex items-center gap-2 px-4 py-2 bg-slate-800/50 hover:bg-slate-700/80 text-slate-100 rounded-lg transition-colors backdrop-blur-sm border border-slate-500/30"
       >
         <ChevronLeft size={20} />
         Back

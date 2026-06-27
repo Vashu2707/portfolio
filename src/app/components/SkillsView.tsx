@@ -41,7 +41,7 @@ export default function SkillsView() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ willChange: 'transform, opacity' }}
-      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-auto p-4 backdrop-blur-md"
+      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-y-auto p-4 py-16 md:py-8 backdrop-blur-md"
     >
       {/* Animated background gradient */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -78,7 +78,7 @@ export default function SkillsView() {
         Back
       </motion.button>
 
-      <div className="max-w-5xl mx-auto pt-20 pb-10">
+      <div className="max-w-5xl mx-auto pt-16 md:pt-24 pb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ export default function SkillsView() {
               className="relative group/skill"
             >
               <div
-                className={`px-6 py-3 rounded-xl text-base font-semibold bg-gradient-to-r ${skillStyle} transition-all cursor-default flex flex-col items-center gap-1`}
+                className={`px-4 py-2.5 md:px-6 md:py-3 rounded-xl text-sm md:text-base font-semibold bg-gradient-to-r ${skillStyle} transition-all cursor-default flex flex-col items-center gap-1`}
               >
                 <span className="text-white">{skill.name}</span>
                 <span className="text-[10px] uppercase tracking-wider text-emerald-400/70 font-bold">

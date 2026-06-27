@@ -27,7 +27,7 @@ function DashboardTileComponent({
       }}
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
       onClick={onClick}
-      className={`cursor-pointer rounded-lg p-6 min-h-[240px] w-[220px] min-w-[220px] shrink-0 md:w-auto md:min-w-0 md:shrink flex flex-col items-center justify-center relative overflow-hidden group ${gradient}`}
+      className={`cursor-pointer rounded-lg p-4 md:p-6 min-h-[200px] h-[200px] md:h-auto md:min-h-[240px] w-[180px] min-w-[180px] shrink-0 md:w-auto md:min-w-0 md:shrink flex flex-col items-center justify-center relative overflow-hidden group ${gradient}`}
       role="button"
       tabIndex={0}
       style={{ willChange: 'transform, opacity' }}
@@ -41,9 +41,9 @@ function DashboardTileComponent({
       <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
 
       {/* Content */}
-      <div className="relative z-10 text-center">
-        {icon && <div className="mb-4 text-5xl">{icon}</div>}
-        <h3 className="text-2xl font-bold text-white drop-shadow-lg">{title}</h3>
+      <div className="relative z-10 text-center flex flex-col items-center justify-center">
+        {icon && <div className="mb-2 md:mb-4 text-4xl md:text-5xl">{icon}</div>}
+        <h3 className="text-xl md:text-2xl font-bold text-white drop-shadow-lg">{title}</h3>
       </div>
 
       {/* Focus indicator - animated smoothly on GPU via opacity/scale (no layoutId to prevent layout thrashing) */}

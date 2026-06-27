@@ -60,7 +60,7 @@ export default function ContactView() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ willChange: 'transform, opacity' }}
-      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-auto flex items-center justify-center p-4 backdrop-blur-md"
+      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-y-auto p-4 py-16 md:py-8 flex justify-center backdrop-blur-md"
     >
       {/* Animated background gradient */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -101,7 +101,7 @@ export default function ContactView() {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.2 }}
-        className="bg-[#0b1026]/75 rounded-2xl p-8 max-w-md w-full shadow-2xl border border-rose-500/30 hover:border-rose-400/50 backdrop-blur-md transition-all duration-300"
+        className="my-auto bg-[#0b1026]/75 rounded-2xl p-5 md:p-8 max-w-md w-full shadow-2xl border border-rose-500/30 hover:border-rose-400/50 backdrop-blur-md transition-all duration-300"
       >
         <motion.div
           variants={containerVariants}

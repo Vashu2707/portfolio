@@ -33,7 +33,7 @@ export default function ProjectsView() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ willChange: 'transform, opacity' }}
-      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-auto p-4 backdrop-blur-md"
+      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-y-auto p-4 py-16 md:py-8 backdrop-blur-md"
     >
       {/* Animated background gradient */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -70,7 +70,7 @@ export default function ProjectsView() {
         Back
       </motion.button>
 
-      <div className="max-w-5xl mx-auto pt-20 pb-10">
+      <div className="max-w-5xl mx-auto pt-16 md:pt-24 pb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export default function ProjectsView() {
                   y: hoveredId === project.id ? -4 : 0,
                 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className="relative bg-[#0b1026]/75 rounded-lg p-6 border border-fuchsia-500/30 hover:border-fuchsia-400/50 transition-all duration-300 backdrop-blur-sm"
+                className="relative bg-[#0b1026]/75 rounded-lg p-5 md:p-6 border border-fuchsia-500/30 hover:border-fuchsia-400/50 transition-all duration-300 backdrop-blur-sm"
               >
                 <div className="flex justify-between items-start gap-4 mb-4">
                   <div className="flex-1">

@@ -30,7 +30,7 @@ export default function ResumeView() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ willChange: 'transform, opacity' }}
-      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-auto p-4 backdrop-blur-md"
+      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-y-auto p-4 py-16 md:py-8 backdrop-blur-md"
     >
       {/* Animated background gradient */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -67,7 +67,7 @@ export default function ResumeView() {
         Back
       </motion.button>
 
-      <div className="max-w-4xl mx-auto pt-20 pb-10">
+      <div className="max-w-4xl mx-auto pt-16 md:pt-24 pb-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -113,7 +113,7 @@ export default function ResumeView() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.2 + idx * 0.1 }}
                   whileHover={{ translateY: -4 }}
-                  className="relative bg-[#0b1026]/75 border border-slate-700/40 rounded-lg p-6 hover:border-slate-500/60 transition-all duration-300 backdrop-blur-sm group"
+                  className="relative bg-[#0b1026]/75 border border-slate-700/40 rounded-lg p-5 md:p-6 hover:border-slate-500/60 transition-all duration-300 backdrop-blur-sm group"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-transparent group-hover:from-white/10 rounded-lg transition-all duration-300" />
                   
@@ -143,7 +143,7 @@ export default function ResumeView() {
             </h3>
             <motion.div
               whileHover={{ translateY: -4 }}
-              className="relative bg-[#0b1026]/75 border border-slate-700/40 rounded-lg p-6 hover:border-slate-500/60 transition-all duration-300 backdrop-blur-sm group"
+              className="relative bg-[#0b1026]/75 border border-slate-700/40 rounded-lg p-5 md:p-6 hover:border-slate-500/60 transition-all duration-300 backdrop-blur-sm group"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white/5 via-transparent to-transparent group-hover:from-white/10 rounded-lg transition-all duration-300" />
               

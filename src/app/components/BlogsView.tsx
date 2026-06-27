@@ -107,7 +107,7 @@ export default function BlogsView() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3 }}
       style={{ willChange: 'transform, opacity' }}
-      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-auto p-4 backdrop-blur-md"
+      className="fixed inset-0 z-30 bg-gradient-to-br from-[#070b19]/95 via-[#0b1026]/95 to-[#0e1430]/95 overflow-y-auto p-4 py-16 md:py-8 backdrop-blur-md"
     >
       {/* Animated background gradient circle */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -150,7 +150,7 @@ export default function BlogsView() {
         {selectedBlog ? 'Back to Blogs' : 'Back'}
       </motion.button>
 
-      <div className="max-w-4xl mx-auto pt-24 pb-16 px-2">
+      <div className="max-w-4xl mx-auto pt-16 md:pt-24 pb-16 px-2">
         <AnimatePresence mode="wait">
           {!selectedBlog ? (
             // Blog Listing View
@@ -191,7 +191,7 @@ export default function BlogsView() {
                         y: hoveredId === blog.id ? -4 : 0,
                       }}
                       transition={{ type: 'spring', stiffness: 350, damping: 25 }}
-                      className="relative bg-[#0b1026]/75 rounded-xl p-6 md:p-8 border border-sky-500/30 hover:border-sky-400/50 transition-all duration-300 backdrop-blur-sm shadow-lg"
+                      className="relative bg-[#0b1026]/75 rounded-xl p-5 md:p-8 border border-sky-500/30 hover:border-sky-400/50 transition-all duration-300 backdrop-blur-sm shadow-lg"
                     >
                       <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs md:text-sm text-sky-300 mb-3">
                         <span className="flex items-center gap-1.5">
@@ -243,7 +243,7 @@ export default function BlogsView() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.2 }}
-              className="bg-[#0b1026]/75 rounded-2xl p-6 md:p-10 border border-sky-500/30 backdrop-blur-md shadow-2xl"
+              className="bg-[#0b1026]/75 rounded-2xl p-5 md:p-10 border border-sky-500/30 backdrop-blur-md shadow-2xl"
             >
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-sky-300 mb-4">
                 <span className="flex items-center gap-1.5">

@@ -110,15 +110,15 @@ export default function Navigation() {
     <div className="fixed inset-0 z-10 flex items-center justify-center pointer-events-none overflow-hidden">
       <div className="w-full max-w-7xl px-4 pointer-events-auto flex flex-col justify-center min-h-screen">
         {/* Title */}
-        <div className="text-center mb-12 mt-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg tracking-wider">
+        <div className="text-center mb-6 md:mb-12 mt-2 md:mt-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-white drop-shadow-lg tracking-wider">
             VASHU GUPTA
           </h1>
-          <p className="text-cyan-200 mt-2 font-medium text-sm md:text-base tracking-widest uppercase">Full Stack Developer</p>
+          <p className="text-cyan-200 mt-1.5 font-medium text-xs md:text-base tracking-widest uppercase">Full Stack Developer</p>
         </div>
 
         {/* Tiles Container */}
-        <div className={isMobile ? "w-full overflow-x-hidden py-8 relative -mx-4 px-4" : ""}>
+        <div className={isMobile ? "w-screen -ml-4 overflow-x-hidden py-8 relative" : ""}>
           <div
             className={
               isMobile
@@ -126,8 +126,8 @@ export default function Navigation() {
                 : "grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4"
             }
             style={isMobile ? {
-              transform: `translateX(calc(50vw - ${activeTile * 236}px - 110px))`,
-              width: `${TILES.length * 220 + (TILES.length - 1) * 16}px`,
+              transform: `translateX(calc(50vw - ${activeTile * 196}px - 90px))`,
+              width: `${TILES.length * 180 + (TILES.length - 1) * 16}px`,
             } : undefined}
           >
             {TILES.map((tile) => (

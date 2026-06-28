@@ -134,9 +134,9 @@ export default function SkillsView() {
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
         >
           {[
-            // { label: 'Total Skills', value: skills.length },
-            // { label: 'Specializations', value: categoriesCount },
-            // { label: 'Expert Areas', value: skills.filter(s => s.level === 'expert').length },
+            { label: 'Total Skills', value: skills.length },
+            { label: 'Specializations', value: categoriesCount },
+            { label: 'Expert Areas', value: skills.filter(s => s.level === 'expert').length },
           ].map((stat, idx) => (
             <motion.div
               key={stat.label}

@@ -31,9 +31,6 @@ export default function SkillsView() {
     return level.charAt(0).toUpperCase() + level.slice(1);
   };
 
-  // Get total unique categories
-  const categoriesCount = new Set(skills.map(s => s.category)).size;
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -126,32 +123,6 @@ export default function SkillsView() {
           ))}
         </motion.div>
 
-        {/* Stats Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto"
-        >
-          {[
-            { label: 'Total Skills', value: skills.length },
-            { label: 'Specializations', value: categoriesCount },
-            { label: 'Expert Areas', value: skills.filter(s => s.level === 'expert').length },
-          ].map((stat, idx) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.5 + idx * 0.05 }}
-              className="bg-[#0b1026]/75 rounded-xl p-6 text-center border border-slate-800 hover:border-emerald-500/25 transition-all duration-300 backdrop-blur-sm"
-            >
-              <motion.p className="text-4xl font-bold text-emerald-400 mb-1">
-                {stat.value}
-              </motion.p>
-              <p className="text-slate-400 text-sm font-semibold uppercase tracking-widest">{stat.label}</p>
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
     </motion.div>
   );

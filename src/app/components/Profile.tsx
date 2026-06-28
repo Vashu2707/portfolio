@@ -94,19 +94,15 @@ export default function Profile() {
               About Me
             </h3>
             <p className="text-gray-200 leading-relaxed">
-              I&apos;m a passionate full-stack developer with a strong foundation in modern web technologies. 
-              I love creating responsive, performant applications that solve real-world problems and provide 
-              excellent user experiences.
+              Driven and detail-oriented Full-Stack Developer with expertise in JavaScript, React, and Node.js. Demonstrated ability todesign and deploy responsive, user-friendly applications independently from concept to production. Passionate about leveraging technical skills and creativity to solve complex problems and contribute to innovative development teams.
             </p>
           </motion.div>
 
           {/* Stats Grid */}
           <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
             {[
-              { label: 'Location', value: 'India' },
-              { label: 'Experience', value: '1+ Years' },
-              { label: 'Specialization', value: 'Web Development' },
-              { label: 'Focus', value: 'Full Stack' },
+              { label: 'Location', value: 'Bangalore, India' },
+              { label: 'Specialization & Focus', value: 'Full-Stack & AI' }
             ].map((stat) => (
               <motion.div
                 key={stat.label}
@@ -127,10 +123,10 @@ export default function Profile() {
             </h3>
             <ul className="space-y-3">
               {[
-                'Build modern web applications with React and Next.js',
-                'Design responsive interfaces using TailwindCSS',
-                'Develop backend services with Node.js and databases',
-                'Create interactive 3D experiences with Three.js',
+                "Build scalable, end-to-end web applications from concept to deployment",
+                "Design responsive, intuitive, and accessible user experiences",
+                "Develop secure backend systems, APIs, databases, and cloud-ready infrastructure",
+                "Integrate AI-powered features, intelligent automation, and data-driven experiences"
               ].map((item, idx) => (
                 <motion.li
                   key={item}

@@ -22,7 +22,7 @@ export const projects: Project[] = [
     id: '1',
     title: 'PayNGo Retail',
     description:
-      'Full-stack web application to manage student records, attendance, and grading using Next.js, Node.js, MongoDB, and Tailwind CSS.',
+      'A Computer Vision + Machine Learning application for retail shopping without need of human intervention and cart management.',
     technologies: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS'],
     link: 'https://github.com/Vashu2707/PayNGo',
     github: 'https://github.com/Vashu2707/PayNGo',

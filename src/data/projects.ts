@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: 'Eduque',
     description:
       'A full fledged application for schools and educational institutions to manage student records, attendance, and grading using Next.js, Node.js, MongoDB, and Tailwind CSS.',
-    technologies: ['Next.js', 'Node.js', 'Supabase', 'Tailwind CSS'],
+    technologies: ['Next.js', 'Node.js', 'postgresql', 'Tailwind CSS'],
     link: 'https://eduque.vashu.in/',
     github: 'https://github.com/Vashu2707/Eduque',
   },

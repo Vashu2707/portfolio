@@ -1,50 +1,44 @@
 export interface Skill {
   name: string;
   category: string;
-  level: 'beginner' | 'intermediate' | 'advanced' | 'expert';
-  icon?: string;
 }
 
 export const skills: Skill[] = [
- // Programming Languages
-  { name: 'JavaScript', category: 'Programming Language', level: 'expert' },
-  { name: 'TypeScript', category: 'Programming Language', level: 'advanced' },
-  { name: 'Python', category: 'Programming Language', level: 'intermediate' },
+  // Languages
+  { name: "JavaScript (ES6+)", category: "Languages" },
+  { name: "TypeScript", category: "Languages" },
+  { name: "Python", category: "Languages" },
 
-  // Markup & Styling
-  { name: 'HTML5', category: 'Markup', level: 'expert' },
-  { name: 'CSS3', category: 'Styling', level: 'advanced' },
-  { name: 'Tailwind CSS', category: 'Styling', level: 'expert' },
-
-  // Frontend Frameworks & Libraries
-  { name: 'React.js', category: 'Frontend', level: 'expert' },
-  { name: 'Next.js', category: 'Frontend', level: 'advanced' },
-  { name: 'Framer Motion', category: 'Frontend', level: 'intermediate' },
-  { name: 'GSAP', category: 'Frontend', level: 'intermediate' },
-  { name: 'Three.js', category: 'Frontend', level: 'intermediate' },
+  // Frontend
+  { name: "React.js", category: "Frontend" },
+  { name: "Next.js", category: "Frontend" },
+  { name: "HTML", category: "Frontend" },
+  { name: "CSS", category: "Frontend" },
+  { name: "Tailwind CSS", category: "Frontend" },
 
   // Backend
-  { name: 'Node.js', category: 'Backend', level: 'advanced' },
-  { name: 'Express.js', category: 'Backend', level: 'intermediate' },
-  { name: 'Bun', category: 'Backend', level: 'intermediate' },
+  { name: "Node.js", category: "Backend" },
+  { name: "Express.js", category: "Backend" },
+  { name: "Bun", category: "Backend" },
+  { name: "REST APIs", category: "Backend" },
 
   // Databases
-  { name: 'MongoDB', category: 'Database', level: 'advanced' },
-  { name: 'MySQL', category: 'Database', level: 'advanced' },
-  { name: 'Firebase', category: 'Database', level: 'intermediate' },
+  { name: "PostgreSQL", category: "Databases" },
+  { name: "MySQL", category: "Databases" },
+  { name: "MongoDB", category: "Databases" },
+  { name: "Redis", category: "Databases" },
 
-  // AI & LLM
-  { name: 'OpenAI API', category: 'AI/LLM', level: 'advanced' },
-  { name: 'Google Gemini API', category: 'AI/LLM', level: 'advanced' },
-  { name: 'LangChain', category: 'AI/LLM', level: 'intermediate' },
-  { name: 'RAG', category: 'AI/LLM', level: 'intermediate' },
-  { name: 'Prompt Engineering', category: 'AI/LLM', level: 'advanced' },
-  { name: 'Vector Databases', category: 'AI/LLM', level: 'intermediate' },
+  // Cloud & DevOps
+  { name: "AWS", category: "Cloud & DevOps" },
+  { name: "Vercel", category: "Cloud & DevOps" },
+  { name: "Docker", category: "Cloud & DevOps" },
+  { name: "Kubernetes", category: "Cloud & DevOps" },
+  { name: "GitHub Actions", category: "Cloud & DevOps" },
 
-  // DevOps & Tools
-  { name: 'Git', category: 'Tools', level: 'advanced' },
-  { name: 'GitHub', category: 'Tools', level: 'advanced' },
-  { name: 'Vercel', category: 'Tools', level: 'advanced' },
-  { name: 'Postman', category: 'Tools', level: 'advanced' },
-  { name: 'Docker', category: 'Tools', level: 'intermediate' },
+  // Tools
+  { name: "Git", category: "Tools" },
+  { name: "Cloudflare", category: "Tools" },
+  { name: "Vim", category: "Tools" },
+  { name: "VS Code", category: "Tools" },
+  { name: "Linux", category: "Tools" },
 ];

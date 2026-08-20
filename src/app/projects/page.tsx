@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-28 sm:py-32">
+    <div className="max-w-6xl mx-auto px-6 sm:px-8 py-24 sm:py-32">
       <SectionHeader label="Projects" title="Selected work" />
-      <p className="text-neutral-500 text-sm leading-relaxed max-w-xl mb-20">
+      <p className="text-neutral-500 text-sm leading-relaxed max-w-xl mb-16 sm:mb-20">
         A collection of projects I&apos;ve built — from full-stack web apps to
         AI-powered tools. Each one designed with clean code, modern tech, and
         real-world problem solving in mind.
@@ -22,15 +22,15 @@ export default function ProjectsPage() {
         {projects.map((project, i) => (
           <div
             key={project.id}
-            className="group border border-white/[0.06] rounded-2xl p-6 sm:p-7 hover:border-white/15 transition-all duration-300"
+            className="group border border-white/[0.06] rounded-2xl p-5 sm:p-7 hover:border-white/15 transition-all duration-300"
           >
-            <div className="flex items-start justify-between gap-5 mb-5">
-              <div className="flex items-start gap-5">
+            <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 sm:gap-5 mb-5">
+              <div className="flex items-start gap-4 sm:gap-5">
                 <span className="text-[13px] text-neutral-700 font-mono mt-0.5 shrink-0">
                   {String(i).padStart(2, "0")}
                 </span>
                 <div>
-                  <h3 className="text-lg font-semibold mb-2.5">
+                  <h3 className="text-lg font-semibold mb-2">
                     {project.title}
                   </h3>
                   <p className="text-neutral-400 text-sm leading-relaxed max-w-2xl">
@@ -38,7 +38,7 @@ export default function ProjectsPage() {
                   </p>
                 </div>
               </div>
-              <div className="flex items-center gap-3 shrink-0 mt-0.5">
+              <div className="flex items-center gap-3 shrink-0 sm:mt-0.5 ml-[40px] sm:ml-0">
                 {project.github && (
                   <a
                     href={project.github}
@@ -63,7 +63,7 @@ export default function ProjectsPage() {
                 )}
               </div>
             </div>
-            <div className="flex flex-wrap gap-2 ml-[42px]">
+            <div className="flex flex-wrap gap-2 sm:ml-[40px]">
               {project.technologies.map((tech) => (
                 <span
                   key={tech}

@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Projects", href: "/projects" },
   { label: "Skills", href: "/skills" },
   { label: "Experience", href: "/experience" },
-  { label: "Certs", href: "/certifications" },
+  { label: "Certifications", href: "/certifications" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -21,7 +21,7 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-xl border-b border-white/[0.06]">
-      <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 h-14 flex items-center justify-between">
         <Link
           href="/"
           className="text-sm font-semibold tracking-tight hover:opacity-60 transition-opacity duration-200"
@@ -30,7 +30,7 @@ export default function Navigation() {
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-0.5">
+        <div className="hidden lg:flex items-center gap-0.5">
           {navLinks.map((link) => {
             const isActive =
               link.href === "/"
@@ -40,7 +40,7 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-[13px] px-3 py-1.5 rounded-full transition-all duration-200 ${
+                className={`text-[13px] px-3 py-1.5 rounded-full transition-all duration-200 whitespace-nowrap ${
                   isActive
                     ? "bg-white text-black font-medium"
                     : "text-neutral-500 hover:text-[#fafafa]"
@@ -55,7 +55,7 @@ export default function Navigation() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-[#fafafa]"
+          className="lg:hidden text-[#fafafa]"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <X size={18} /> : <Menu size={18} />}
@@ -64,7 +64,7 @@ export default function Navigation() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-xl border-t border-white/[0.06]">
+        <div className="lg:hidden bg-black/95 backdrop-blur-xl border-t border-white/[0.06]">
           <div className="px-6 py-5 flex flex-col gap-0.5">
             {navLinks.map((link) => {
               const isActive =

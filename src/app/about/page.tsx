@@ -30,10 +30,10 @@ const highlights = [
 
 export default function AboutPage() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-28 sm:py-32">
+    <div className="max-w-6xl mx-auto px-6 sm:px-8 py-24 sm:py-32">
       <SectionHeader label="About" title="A bit about me" />
 
-      <div className="grid lg:grid-cols-[1fr_1.3fr] gap-20">
+      <div className="grid lg:grid-cols-[1fr_1.3fr] gap-16 lg:gap-20">
         <div className="space-y-5">
           <p className="text-neutral-200 text-base sm:text-lg leading-relaxed">
             I&apos;m a driven and detail-oriented Full-Stack Developer with
@@ -51,7 +51,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-4">
           {highlights.map((item) => (
             <div
               key={item.title}

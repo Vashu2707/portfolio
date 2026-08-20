@@ -6,12 +6,12 @@ export default function SectionHeader({
   title?: string;
 }) {
   return (
-    <div className="mb-16">
-      <p className="text-xs tracking-[0.25em] uppercase text-neutral-600 mb-3">
+    <div className="mb-20">
+      <p className="text-[11px] tracking-[0.3em] uppercase text-neutral-600 mb-4">
         {label}
       </p>
       {title && (
-        <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
+        <h1 className="text-3xl sm:text-5xl font-bold tracking-tight leading-tight">
           {title}
         </h1>
       )}

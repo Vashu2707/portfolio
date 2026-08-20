@@ -11,9 +11,7 @@ const contactLinks = [
   {
     label: "mail@vashu.in",
     href: "mailto:mail@vashu.in",
-    icon: (
-      <Mail size={16} />
-    ),
+    icon: <Mail size={16} />,
   },
   {
     label: "github.com/Vashu2707",
@@ -37,9 +35,9 @@ const contactLinks = [
 
 export default function ContactPage() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-24">
+    <div className="max-w-6xl mx-auto px-6 py-28 sm:py-32">
       <SectionHeader label="Contact" title="Let&apos;s connect" />
-      <p className="text-neutral-400 leading-relaxed max-w-lg mb-16">
+      <p className="text-neutral-400 leading-relaxed max-w-lg mb-20">
         I&apos;m always open to discussing new projects, creative ideas, or
         opportunities to be part of something great. Feel free to reach out.
       </p>
@@ -51,12 +49,12 @@ export default function ContactPage() {
             href={link.href}
             target={link.external ? "_blank" : undefined}
             rel={link.external ? "noopener noreferrer" : undefined}
-            className="group flex items-center gap-4 border border-white/5 rounded-xl p-4 hover:border-white/15 transition-all duration-300"
+            className="group flex items-center gap-4 border border-white/[0.06] rounded-2xl p-5 hover:border-white/15 transition-all duration-300"
           >
-            <span className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-neutral-400 group-hover:border-white/25 group-hover:text-white transition-all">
+            <span className="w-11 h-11 rounded-full border border-white/10 flex items-center justify-center text-neutral-500 group-hover:border-white/25 group-hover:text-[#fafafa] transition-all duration-300">
               {link.icon}
             </span>
-            <span className="text-sm text-neutral-400 group-hover:text-white transition-colors">
+            <span className="text-[15px] text-neutral-400 group-hover:text-[#fafafa] transition-colors duration-200">
               {link.label}
             </span>
           </a>

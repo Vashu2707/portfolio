@@ -6,13 +6,6 @@ export const metadata: Metadata = {
   title: "Skills",
 };
 
-const skillLevel: Record<string, number> = {
-  expert: 100,
-  advanced: 75,
-  intermediate: 50,
-  beginner: 25,
-};
-
 const categories = [
   "Programming Language",
   "Markup",
@@ -26,40 +19,30 @@ const categories = [
 
 export default function SkillsPage() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-24">
+    <div className="max-w-6xl mx-auto px-6 py-28 sm:py-32">
       <SectionHeader label="Skills" title="Technical toolkit" />
-      <p className="text-neutral-500 text-sm leading-relaxed max-w-xl mb-16">
+      <p className="text-neutral-500 text-sm leading-relaxed max-w-xl mb-20">
         Technologies and tools I work with to build modern, scalable
         applications — from frontend frameworks to AI integrations.
       </p>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-12">
         {categories.map((category) => {
           const categorySkills = skills.filter((s) => s.category === category);
           if (categorySkills.length === 0) return null;
           return (
             <div key={category}>
-              <h3 className="text-[11px] tracking-[0.2em] uppercase text-neutral-600 mb-5">
+              <h3 className="text-[11px] tracking-[0.25em] uppercase text-neutral-600 mb-5">
                 {category}
               </h3>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-wrap gap-2">
                 {categorySkills.map((skill) => (
-                  <div key={skill.name}>
-                    <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-sm text-neutral-300">
-                        {skill.name}
-                      </span>
-                      <span className="text-[10px] text-neutral-700 uppercase tracking-wider">
-                        {skill.level}
-                      </span>
-                    </div>
-                    <div className="h-[2px] bg-white/5 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-white/40 rounded-full"
-                        style={{ width: `${skillLevel[skill.level]}%` }}
-                      />
-                    </div>
-                  </div>
+                  <span
+                    key={skill.name}
+                    className="text-[13px] px-3.5 py-1.5 rounded-full border border-white/[0.06] text-neutral-300 hover:border-white/15 hover:text-[#fafafa] transition-all duration-200"
+                  >
+                    {skill.name}
+                  </span>
                 ))}
               </div>
             </div>

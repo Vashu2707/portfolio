@@ -30,33 +30,35 @@ const highlights = [
 
 export default function AboutPage() {
   return (
-    <div className="max-w-6xl mx-auto px-6 py-24">
+    <div className="max-w-6xl mx-auto px-6 py-28 sm:py-32">
       <SectionHeader label="About" title="A bit about me" />
 
-      <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16">
-        <div>
-          <p className="text-neutral-300 leading-relaxed text-base mb-6">
+      <div className="grid lg:grid-cols-[1fr_1.3fr] gap-20">
+        <div className="space-y-5">
+          <p className="text-neutral-200 text-base sm:text-lg leading-relaxed">
             I&apos;m a driven and detail-oriented Full-Stack Developer with
-            expertise in JavaScript, React, and Node.js. I&apos;ve demonstrated
-            the ability to design and deploy responsive, user-friendly
-            applications independently from concept to production.
+            expertise in JavaScript, React, and Node.js.
           </p>
-          <p className="text-neutral-500 leading-relaxed text-sm">
+          <p className="text-neutral-500 text-sm leading-relaxed">
+            I&apos;ve demonstrated the ability to design and deploy responsive,
+            user-friendly applications independently from concept to production.
             Passionate about leveraging technical skills and creativity to solve
             complex problems and contribute to innovative development teams.
+          </p>
+          <p className="text-neutral-600 text-sm leading-relaxed">
             Currently specializing in Full-Stack & AI development based in
             Bangalore, India.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-5">
           {highlights.map((item) => (
             <div
               key={item.title}
-              className="border border-white/5 rounded-xl p-5 hover:border-white/10 transition-colors"
+              className="border border-white/[0.06] rounded-2xl p-6 hover:border-white/10 transition-colors duration-300"
             >
-              <h3 className="font-semibold text-sm mb-2">{item.title}</h3>
-              <p className="text-xs text-neutral-500 leading-relaxed">
+              <h3 className="font-semibold text-sm mb-2.5">{item.title}</h3>
+              <p className="text-[13px] text-neutral-500 leading-relaxed">
                 {item.description}
               </p>
             </div>

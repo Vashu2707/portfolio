@@ -10,19 +10,19 @@ export interface Certification {
 export const certifications: Certification[] = [
   {
     id: "1",
-    title: "JavaScript Course",
+    title: "JavaScript Bootcamp",
     issuer: "Let's Upgrade",
     type: "certificate",
   },
   {
     id: "2",
-    title: "MongoDB Certification",
+    title: "MongoDB Bootcamp",
     issuer: "Let's Upgrade",
     type: "certificate",
   },
   {
     id: "3",
-    title: "SQL Certification",
+    title: "SQL Bootcamp",
     issuer: "Let's Upgrade",
     type: "certificate",
   },

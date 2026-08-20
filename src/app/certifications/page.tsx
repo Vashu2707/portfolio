@@ -13,7 +13,7 @@ export default function CertificationsPage() {
 
   return (
     <div className="max-w-6xl mx-auto px-6 sm:px-8 py-24 sm:py-32">
-      <SectionHeader label="Certifications" title="Certifications & patents" />
+      <SectionHeader label="Certifications" title="Certificates & Patents" />
 
       {/* Certificates */}
       {certificates.length > 0 && (

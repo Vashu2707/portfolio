@@ -22,11 +22,11 @@ const timeline = [
       "Higher secondary education with emphasis on Physics, Chemistry, Mathematics, and Computer Science.",
   },
   {
-    period: "Ongoing",
-    title: "Full Stack Development",
-    org: "Open Source Contributor & Independent Projects",
+    period: "2019-2021",
+    title: "High School — Science Stream",
+    org: "Holy Cross School",
     description:
-      "Building full-stack web applications with React, Node.js, TypeScript, and various databases. Actively contributing to open-source projects.",
+      "Secondary education with a focus on foundational concepts in Science and Mathematics.",
   },
 ];
 

@@ -13,9 +13,7 @@ export default function ProjectsPage() {
     <div className="max-w-6xl mx-auto px-6 sm:px-8 py-24 sm:py-32">
       <SectionHeader label="Projects" title="Selected work" />
       <p className="text-neutral-500 text-sm leading-relaxed max-w-xl mb-16 sm:mb-20">
-        A collection of projects I&apos;ve built — from full-stack web apps to
-        AI-powered tools. Each one designed with clean code, modern tech, and
-        real-world problem solving in mind.
+        A collection of projects I&apos;ve built — from full-stack web apps to AI-powered tools. Each one designed with clean code, modern tech, and real-world problem solving in mind.
       </p>
 
       <div className="flex flex-col gap-4">

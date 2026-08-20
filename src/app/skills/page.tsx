@@ -20,8 +20,7 @@ export default function SkillsPage() {
     <div className="max-w-6xl mx-auto px-6 sm:px-8 py-24 sm:py-32">
       <SectionHeader label="Skills" title="Technical toolkit" />
       <p className="text-neutral-500 text-sm leading-relaxed max-w-xl mb-16 sm:mb-20">
-        Technologies and tools I work with to build modern, scalable
-        applications — from frontend frameworks to cloud infrastructure.
+        Technologies and tools I work with to build modern, scalable applications — from frontend frameworks to cloud infrastructure.
       </p>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10">

@@ -3,7 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import SectionHeader from "@/components/SectionHeader";
 
 export const metadata: Metadata = {
-  title: "Experience",
+  title: "Education",
 };
 
 const timeline = [
@@ -33,7 +33,7 @@ const timeline = [
 export default function ExperiencePage() {
   return (
     <div className="max-w-6xl mx-auto px-6 sm:px-8 py-24 sm:py-32">
-      <SectionHeader label="Experience" title="Education & work" />
+      <SectionHeader label="Education" title="Education & background" />
 
       <div className="relative">
         {timeline.map((item, i) => (

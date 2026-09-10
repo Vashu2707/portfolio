@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/data/projects";
@@ -7,36 +8,50 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="min-h-[90vh] flex flex-col justify-center px-6 sm:px-8 max-w-6xl mx-auto">
-        <div className="max-w-2xl">
-          <p className="text-[11px] tracking-[0.35em] uppercase text-neutral-600 mb-8">
-            Full Stack Developer
-          </p>
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95] mb-8">
-            Vashu
-            <br />
-            Gupta
-          </h1>
-          <p className="text-base sm:text-lg text-neutral-400 leading-relaxed max-w-md mb-12">
-            Building end-to-end web applications with a focus on clean
-            architecture, responsive design, and intelligent systems.
-          </p>
-          <div className="flex flex-wrap items-center gap-3">
-            <Link
-              href="/projects"
-              className="group inline-flex items-center gap-2 bg-white text-black text-sm font-medium px-6 py-3 rounded-full hover:bg-neutral-200 transition-colors duration-200"
-            >
-              View Projects
-              <ArrowUpRight
-                size={14}
-                className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          <div className="max-w-2xl flex-1">
+            <p className="text-[11px] tracking-[0.35em] uppercase text-neutral-600 mb-8">
+              Full Stack Developer
+            </p>
+            <h1 className="text-5xl sm:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.95] mb-8">
+              Vashu
+              <br />
+              Gupta
+            </h1>
+            <p className="text-base sm:text-lg text-neutral-400 leading-relaxed max-w-md mb-12">
+              Building end-to-end web applications with a focus on clean
+              architecture, responsive design, and intelligent systems.
+            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <Link
+                href="/projects"
+                className="group inline-flex items-center gap-2 bg-white text-black text-sm font-medium px-6 py-3 rounded-full hover:bg-neutral-200 transition-colors duration-200"
+              >
+                View Projects
+                <ArrowUpRight
+                  size={14}
+                  className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200"
+                />
+              </Link>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 text-sm text-neutral-400 border border-white/10 px-6 py-3 rounded-full hover:border-white/25 hover:text-[#fafafa] transition-all duration-200"
+              >
+                Get in Touch
+              </Link>
+            </div>
+          </div>
+          <div className="shrink-0">
+            <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[26rem] lg:h-[26rem] rounded-full overflow-hidden border border-white/[0.06]">
+              <Image
+                src="/profile.jpeg"
+                alt="Vashu Gupta"
+                width={416}
+                height={416}
+                className="w-full h-full object-cover"
+                priority
               />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 text-sm text-neutral-400 border border-white/10 px-6 py-3 rounded-full hover:border-white/25 hover:text-[#fafafa] transition-all duration-200"
-            >
-              Get in Touch
-            </Link>
+            </div>
           </div>
         </div>
       </section>

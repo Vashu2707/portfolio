@@ -44,7 +44,7 @@ export default function Home() {
           <div className="shrink-0">
             <div className="w-80 h-80 sm:w-96 sm:h-96 lg:w-[26rem] lg:h-[26rem] rounded-full overflow-hidden border border-white/[0.06]">
               <Image
-                src="/profile.jpeg"
+                src="/profile.jpg"
                 alt="Vashu Gupta"
                 width={416}
                 height={416}
